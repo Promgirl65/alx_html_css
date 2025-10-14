@@ -17,6 +17,7 @@
 /* Base Styles */
 body {
     font-family: 'Source Sans Pro', Arial, sans-serif;
+    color: var(--text-color);
     line-height: 1.6;
 }
 
@@ -29,8 +30,12 @@ body {
 
 /* Header */
 .header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
     padding: 28px 0;
-    background-color: var(--dark-color);
 }
 
 .nav {
@@ -63,6 +68,81 @@ body {
     color: var(--primary-color);
 }
 
+/* Hero Section */
+.hero {
+    background-color: var(--dark-color);
+    background-image: url('images/headphones_hero_1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 800px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content {
+    max-width: 640px;
+    margin: 0 auto;
+    padding-top: 200px;
+}
+
+.hero-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.btn {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 14px 32px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 22px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn:hover,
+.btn:active {
+    opacity: var(--hover-opacity);
+}
+
+.hero-description {
+    font-size: 16px;
+    line-height: 1.625;
+    margin-top: 65px;
+    font-weight: 400;
+}
+
 /* What We Do Section */
 .what-we-do {
     padding: 110px 0;
@@ -88,12 +168,12 @@ body {
 .features {
     display: flex;
     justify-content: center;
-    gap: 97px;
+    gap: 60px;
     flex-wrap: wrap;
 }
 
 .feature-item {
-    flex: 0 1 10px;
+    flex: 0 1 207px;
     text-align: center;
 }
 
@@ -126,6 +206,29 @@ body {
         flex-direction: column;
         gap: 20px;
         text-align: center;
+    }
+
+    .hero {
+        min-height: 100vh;
+    }
+
+    .hero-content {
+        padding-top: 250px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .hero-title {
+        font-size: 32px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+        margin-top: 50px;
     }
 
     /* What We Do Mobile */
